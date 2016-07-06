@@ -34,6 +34,13 @@ Once you submit the signup form you'll receive an email from Slack to continue
 the signup process. Once you finish the signup process you can use Slack via
 their web application or [download a desktop or mobile client](https://slack.com/downloads).
 
+The Chef community is a mixture of professionals and volunteers who come from
+all over the world and work together to make Chef better. Community members
+fulfill many roles, including mentoring, teaching, and connecting with other
+members of the community.  All participants in the Chef Community Slack agree to
+follow the [Chef Community
+Guidelines](https://github.com/chef/chef-rfc/blob/master/rfc020-community-guidelines.md).
+
 </div>
 <div class="row">
 
