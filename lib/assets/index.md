@@ -93,34 +93,25 @@ less critical than they originally thought.
 
 ### FAQ
 
-#### What Is Slack?
-
-Slack is a real-time chat system similar to IRC or Jabber. Here you can find
+* **What Is Slack?**
+  * Slack is a real-time chat system similar to IRC or Jabber. Here you can find
 Chef community members to ask questions, learn more about Chef, or socialize
 with our awesome community.
-
-#### Why Slack?
-
-Chef used IRC for our community chat for many years, however stagnation of the
+* **Why Slack?**
+  * Chef used IRC for our community chat for many years, however stagnation of the
 user experience for IRC combined with many improvements available from Slack
 prompted us to reconsider this. You can read more about the rationale of the
 move in [Chef RFC 74](https://github.com/chef/chef-rfc/blob/master/rfc074-community-slack.md).
-
-#### Can I Use My Supermarket or Discourse Account?
-
-Unfortunately not at this time. For now your Slack account is independent of
+* **Can I Use My Supermarket or Discourse Account?**
+  * Unfortunately not at this time. For now your Slack account is independent of
 the other Chef community tools.
-
-#### Where Else Can I Find Help With Chef?
-
-We have a mailing list and forum at [discourse.chef.io](https://discourse.chef.io/)
+* **Where Else Can I Find Help With Chef?**
+  * We have a mailing list and forum at [discourse.chef.io](https://discourse.chef.io/)
 if you prefer a more asynchronous approach. We also have volunteers on
 [StackOverflow](https://stackoverflow.com/tags/chef). If volunteer support isn't
 available, you can reach Chef Software's support team at [support@chef.io](mailto:support@chef.io).
-
-#### I Really Like IRC, What Do I Do?
-
-The `#chef` IRC channel will be bridge to Slack for the foreseeable future, so
+* **I Really Like IRC, What Do I Do?**
+  * The `#chef` IRC channel will be bridge to Slack for the foreseeable future, so
 you can continue to join in the discussion there, albeit with a reduced
 experience. Additionally Slack does offer an [IRC gateway](https://get.slack.help/hc/en-us/articles/201727913-Connecting-to-Slack-over-IRC-and-XMPP),
 though it has historically had some stability issues.
