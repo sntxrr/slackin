@@ -22,7 +22,7 @@ don't hesitate to contact us at [slack@chef.io](mailto:slack@chef.io).
 </div>
 <div class="row">
 
-## Getting Started with Slack
+### Getting Started with Slack
 
 To register for our Slack team, please enter your email address below. Whatever
 address you use with be visible to other Slack users, but can be any address
@@ -37,7 +37,7 @@ their web application or [download a desktop or mobile client](https://slack.com
 </div>
 <div class="row">
 
-## Slack Channels
+### Slack Channels
 
 By default
 you will be added to the `#general` channel which is our general-purpose
@@ -49,7 +49,7 @@ channels menu on the left.
 </div>
 <div class="row">
 
-## Setting Up Your Slack Profile
+### Setting Up Your Slack Profile
 
 Once registered for Slack, you can customize your profile [through the Slack
 website](https://chefcommunity.slack.com/account/profile).
@@ -60,7 +60,7 @@ Here you can set the name and avatar people will see when you chat with them.
 </div>
 <div class="row">
 
-## I Need Help With Slack!
+### I Need Help With Slack!
 
 You can check out Slack's [Help Center documentation](https://get.slack.help/hc/en-us)
 for answers to many common problems. If you are already logged in to Slack, you
@@ -69,7 +69,7 @@ can ask for assistance in the `#general` channel.
 </div>
 <div class="row">
 
-## Slack-tiquette
+### Slack-tiquette
 
 As with IRC, Slack has some of its own customs and etiquette. Our community
 Slack is a volunteer-run organization so it is possible that there may be no
@@ -84,34 +84,34 @@ less critical than they originally thought.
 </div>
 <div class="row">
 
-## FAQ
+### FAQ
 
-### What Is Slack?
+#### What Is Slack?
 
 Slack is a real-time chat system similar to IRC or Jabber. Here you can find
 Chef community members to ask questions, learn more about Chef, or socialize
 with our awesome community.
 
-### Why Slack?
+#### Why Slack?
 
 Chef used IRC for our community chat for many years, however stagnation of the
 user experience for IRC combined with many improvements available from Slack
 prompted us to reconsider this. You can read more about the rationale of the
 move in [Chef RFC 74](https://github.com/chef/chef-rfc/blob/master/rfc074-community-slack.md).
 
-### Can I Use My Supermarket or Discourse Account?
+#### Can I Use My Supermarket or Discourse Account?
 
 Unfortunately not at this time. For now your Slack account is independent of
 the other Chef community tools.
 
-### Where Else Can I Find Help With Chef?
+#### Where Else Can I Find Help With Chef?
 
 We have a mailing list and forum at [discourse.chef.io](https://discourse.chef.io/)
 if you prefer a more asynchronous approach. We also have volunteers on
 [StackOverflow](https://stackoverflow.com/tags/chef). If volunteer support isn't
 available, you can reach Chef Software's support team at [support@chef.io](mailto:support@chef.io).
 
-### I Really Like IRC, What Do I Do?
+#### I Really Like IRC, What Do I Do?
 
 The `#chef` IRC channel will be bridge to Slack for the foreseeable future, so
 you can continue to join in the discussion there, albeit with a reduced
