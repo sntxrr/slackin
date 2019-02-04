@@ -27,7 +27,7 @@ var token = args.sub[1] || process.env.SLACK_API_TOKEN
 var emails = process.env.EMAIL_SLACK_LIST || ''
 var blockDomains = process.env.BLOCKDOMAINS_SLACK_LIST || ''
 // Try to read blockdomains in as a file.
-if blockDomains.startsWith('file://') {
+if (blockDomains.startsWith('file://')) {
   blockDomains = fs.readFileSync(blockDomains.substr(7)).toString()
 }
 
