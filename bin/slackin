@@ -28,7 +28,7 @@ var emails = process.env.EMAIL_SLACK_LIST || ''
 var blockDomains = process.env.BLOCKDOMAINS_SLACK_LIST || ''
 // Try to read blockdomains in as a file.
 if blockDomains.startsWith('file://') {
-  blockDomains = fs.readFileSync(blockDomains.substr(7))
+  blockDomains = fs.readFileSync(blockDomains.substr(7)).toString()
 }
 
 var gcaptcha_secret = args.sub[2] || process.env.GOOGLE_CAPTCHA_SECRET
