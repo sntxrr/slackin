@@ -24,6 +24,7 @@ var flags = args.parse(process.argv, {
 var org = args.sub[0] || process.env.SLACK_SUBDOMAIN
 var token = args.sub[1] || process.env.SLACK_API_TOKEN
 var emails = process.env.EMAIL_SLACK_LIST || ''
+var blockDomains = process.env.BLOCKDOMAINS_SLACK_LIST || ''
 
 var gcaptcha_secret = args.sub[2] || process.env.GOOGLE_CAPTCHA_SECRET
 var gcaptcha_sitekey = args.sub[3] || process.env.GOOGLE_CAPTCHA_SITEKEY
@@ -40,6 +41,7 @@ if (!org || !token || !gcaptcha_sitekey || !gcaptcha_secret) {
   flags.org = org
   flags.token = token
   flags.emails = emails
+  flags.blockDomains = blockDomains
   flags.gcaptcha_secret = gcaptcha_secret
   flags.gcaptcha_sitekey = gcaptcha_sitekey
 }
