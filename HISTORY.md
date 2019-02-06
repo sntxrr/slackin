@@ -1,4 +1,69 @@
 
+0.13.0 / 2016-07-20
+===================
+
+  * index: add `/data` endpoint to get data through a JSON API
+
+0.12.0 / 2016-07-20
+===================
+
+  * add options cors support
+  * slack: improve error handling
+
+0.11.3 / 2016-07-19
+===================
+
+  * package: don't forget about assets
+
+0.11.2 / 2016-07-19
+===================
+
+  * package: fix broken `main`
+
+0.11.1 / 2016-07-19
+===================
+
+  * package: fix usecase of `require('slackin')`
+
+0.11.0 / 2016-07-19
+===================
+
+  * index: expose express app as `app` on the returned value of `slackin`
+
+0.10.3 / 2016-07-19
+===================
+
+  * package: only publish `bin` and `dist`
+
+0.10.2 / 2016-07-19
+===================
+
+  * package: remove postinstall
+
+0.10.1 / 2016-07-19
+===================
+
+  * moving babel and gulp into dev deps [@rauchg]
+  * package: remove `start` as it requires ENV stuff [@rauchg]
+
+0.10.0 / 2016-07-19
+===================
+
+  * package: bump `socket.io` for security fixes
+
+0.9.0 / 2016-07-19
+==================
+
+  * Important bug fixes (#208) [@leo]
+  * Switch to args, lint code and clean up (#200) [@leo]
+  * Update docs with more clear token generation info
+  * Change heroku deploy to master
+  * Update Dockerfile to match Procfile
+  * issue #169, add turnary assignment for client sdk channels
+  * Change case on the "already invited" message
+  * Update Readme.md
+  * Fix TypeError when submitting w/o SLACK_CHANNELS config
+
 0.8.3 / 2016-03-08
 ==================
 
