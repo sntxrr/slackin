@@ -12,7 +12,7 @@ action "fargate deploy" {
     COUNT = "2"
     CPU = "256"
     MEMORY = "512"
-    BUCKET = "hangops-github-actions"
+    BUCKET = "hangops-inviter-terraform"
   }
   secrets = ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
 }
