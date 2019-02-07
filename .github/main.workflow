@@ -16,3 +16,22 @@ action "fargate deploy" {
   }
   secrets = ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
 }
+
+workflow "on pull request merge, delete the branch" {
+  on = "pull_request"
+  resolves = ["branch cleanup"]
+}
+
+action "branch cleanup" {
+  uses = "jessfraz/branch-cleanup-action@master"
+  secrets = ["GITHUB_TOKEN"]
+}
+
+workflow "on push, Docker build" {
+  on = "push"
+  resolves = ["GitHub Action for Docker"]
+}
+
+action "GitHub Action for Docker" {
+  uses = "actions/docker/cli@aea64bb1b97c42fa69b90523667fef56b90d7cff"
+}
