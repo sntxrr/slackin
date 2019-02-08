@@ -1,4 +1,3 @@
-
 module "base_vpc" {
   source = "github.com/terraform-aws-modules/terraform-aws-vpc"
 
@@ -13,7 +12,7 @@ module "base_vpc" {
   single_nat_gateway = true
 
   tags = {
-    Terraform = "true"
+    Terraform   = "true"
     Environment = "dev"
   }
 }

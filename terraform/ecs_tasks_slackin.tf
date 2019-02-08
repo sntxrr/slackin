@@ -1,11 +1,32 @@
+locals {
+  container_definitions = <<DEFINITION
+[
+  {
+    "cpu": ${var.cpu},
+    "image": "${var.image}",
+    "memory": ${var.memory},
+    "name": "app",
+    "networkMode": "awsvpc",
+    "pseudoTerminal": true,
+    "portMappings": [
+      {
+        "containerPort": 3000,
+        "hostPort": 3000
+      }
+    ]
+  }
+]
+DEFINITION
+}
+
 resource "aws_ecs_task_definition" "slackin" {
-  family                = "slackin"
+  family                   = "slackin"
   requires_compatibilities = ["FARGATE"]
-  network_mode = "awsvpc"
-  cpu = 256
-  memory = 512
-  container_definitions = "${data.template_file.slackin.rendered}"
-  execution_role_arn = "${aws_iam_role.ecs_task_assume.arn}"
+  network_mode             = "awsvpc"
+  cpu                      = 256
+  memory                   = 512
+  container_definitions    = "${local.container_definitions}"
+  execution_role_arn       = "${aws_iam_role.ecs_task_assume.arn}"
 }
 
 resource "aws_ecs_service" "slackin" {
@@ -16,17 +37,17 @@ resource "aws_ecs_service" "slackin" {
   desired_count   = 1
 
   network_configuration = {
-    subnets = ["${module.base_vpc.private_subnets[0]}"]
+    subnets         = ["${module.base_vpc.private_subnets[0]}"]
     security_groups = ["${aws_security_group.ecs.id}"]
   }
 
   load_balancer {
-   target_group_arn = "${aws_alb_target_group.slackin.arn}"
-   container_name = "slackin"
-   container_port = 3000
+    target_group_arn = "${aws_alb_target_group.slackin.arn}"
+    container_name   = "slackin"
+    container_port   = 3000
   }
 
   depends_on = [
-    "aws_alb_listener.slackin"
+    "aws_alb_listener.slackin",
   ]
 }
