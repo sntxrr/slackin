@@ -78,7 +78,4 @@ action "sntxrr/create-terraformrc@master" {
     "GITHUB_TOKEN",
     "TF_ENV_TOKEN",
   ]
-  env = {
-    TF_ACTION_WORKING_DIR = "./terraform"
-  }
 }
