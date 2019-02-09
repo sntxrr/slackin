@@ -55,3 +55,13 @@ action "branch cleanup" {
   uses = "jessfraz/branch-cleanup-action@master"
   secrets = ["GITHUB_TOKEN"]
 }
+
+workflow "New workflow" {
+  on = "push"
+  resolves = ["entrypoint.sh"]
+}
+
+action "entrypoint.sh" {
+  uses = "entrypoint.sh"
+  secrets = ["SOME_SECRET"]
+}
