@@ -9,8 +9,8 @@ resource "aws_route53_record" "alias_route53_record" {
   type    = "A"
 
   alias {
-    name                   = "${aws_lb.slackin.dns_name}"
-    zone_id                = "${aws_lb.slackin.zone_id}"
+    name                   = "${aws_alb.slackin.dns_name}"
+    zone_id                = "${aws_alb.slackin.zone_id}"
     evaluate_target_health = true
   }
 }
