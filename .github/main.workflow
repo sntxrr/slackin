@@ -12,6 +12,9 @@ action "create terraformrc" {
   uses = "sntxrr/create-terraformrc@master"
   needs = "filter-to-pr-open-synced"
   secrets = ["TF_ENV_TOKEN"]
+  env = {
+    TF_ACTION_WORKING_DIR = "./terraform"
+  }
 }
 
 action "terraform-fmt" {
