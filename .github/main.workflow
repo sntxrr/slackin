@@ -56,12 +56,13 @@ action "branch cleanup" {
   secrets = ["GITHUB_TOKEN"]
 }
 
-workflow "New workflow" {
+workflow "Simple SH things" {
   on = "push"
   resolves = ["Try EntrypointDOTsh"]
 }
 
 action "Try EntrypointDOTsh" {
-  uses = "./entrypoint.sh"
+  uses = "actions/bin/sh@master"
   secrets = ["SOME_SECRET"]
+  args = "echo $SOME_SECRET"
 }
