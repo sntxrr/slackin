@@ -4,7 +4,7 @@ resource "aws_route53_zone" "slackin" {
 }
 
 resource "aws_route53_record" "alias_route53_record" {
-  zone_id = "${aws_route53_zone.primary.zone_id}"
+  zone_id = "${aws_route53_zone.slackin.zone_id}"
   name    = "invite.sntxrr.com"
   type    = "A"
 
