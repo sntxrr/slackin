@@ -1,5 +1,8 @@
 workflow "Terraform" {
-  resolves = "terraform-plan"
+  resolves = [
+    "terraform-plan",
+    "sntxrr/create-terraformrc@master",
+  ]
   on = "pull_request"
 }
 
@@ -8,7 +11,7 @@ action "filter-to-pr-open-synced" {
   args = "action 'opened|synchronize'"
 }
 
-action "create terraformrc" {
+action "sntxrr/create-terraformrc/@master" {
   uses = "sntxrr/create-terraformrc@master"
   needs = "filter-to-pr-open-synced"
   secrets = ["TF_ENV_TOKEN"]
@@ -28,7 +31,10 @@ action "terraform-fmt" {
 
 action "terraform-init" {
   uses = "hashicorp/terraform-github-actions/init@v0.1.1"
-  needs = "terraform-fmt"
+  needs = [
+    "terraform-fmt",
+    "sntxrr/create-terraformrc@master",
+  ]
   secrets = ["GITHUB_TOKEN"]
   env = {
     TF_ACTION_WORKING_DIR = "./terraform"
@@ -63,4 +69,13 @@ workflow "on pull request merge, delete the branch" {
 action "branch cleanup" {
   uses = "jessfraz/branch-cleanup-action@master"
   secrets = ["GITHUB_TOKEN"]
+}
+
+action "sntxrr/create-terraformrc@master" {
+  uses = "sntxrr/create-terraformrc@master"
+  needs = ["filter-to-pr-open-synced"]
+  secrets = ["GITHUB_TOKEN", "TF_ENV_TOKEN"]
+  env = {
+    TF_ACTION_WORKING_DIR = "./terraform"
+  }
 }
