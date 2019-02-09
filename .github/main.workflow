@@ -58,10 +58,10 @@ action "branch cleanup" {
 
 workflow "New workflow" {
   on = "push"
-  resolves = ["entrypoint.sh"]
+  resolves = ["Try EntrypointDOTsh"]
 }
 
-action "entrypoint.sh" {
-  uses = "entrypoint.sh"
+action "Try EntrypointDOTsh" {
+  uses = "./entrypoint.sh"
   secrets = ["SOME_SECRET"]
 }
