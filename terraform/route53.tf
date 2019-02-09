@@ -1,3 +1,4 @@
+# add some Route53 magic
 resource "aws_route53_zone" "slackin" {
   name = "sntxrr.com"
 }
