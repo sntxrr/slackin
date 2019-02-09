@@ -3,15 +3,15 @@ workflow "Terraform" {
   on = "pull_request"
 }
 
-action "create terraformrc" {
-  uses = "sntxrr/create-terraformrc@master"
-  secrets = ["TF_ENV_TOKEN"]
-}
-
 action "filter-to-pr-open-synced" {
   uses = "actions/bin/filter@master"
-  needs = "create terraformrc"
   args = "action 'opened|synchronize'"
+}
+
+action "create terraformrc" {
+  uses = "sntxrr/create-terraformrc@master"
+  needs = "filter-to-pr-open-synced"
+  secrets = ["TF_ENV_TOKEN"]
 }
 
 action "terraform-fmt" {
