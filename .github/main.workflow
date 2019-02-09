@@ -64,5 +64,5 @@ workflow "Simple SH things" {
 action "Try EntrypointDOTsh" {
   uses = "actions/bin/sh@master"
   secrets = ["SOME_SECRET"]
-  args = "echo $SOME_SECRET"
+  args = "./entrypoint.sh"
 }
