@@ -3,8 +3,14 @@ workflow "Terraform" {
   on = "pull_request"
 }
 
+action "create terraformrc" {
+  uses = "sntxrr/create-terraformrc@master"
+  secrets = ["TF_ENV_TOKEN"]
+}
+
 action "filter-to-pr-open-synced" {
   uses = "actions/bin/filter@master"
+  needs ="create terraformrc"
   args = "action 'opened|synchronize'"
 }
 
@@ -54,15 +60,4 @@ workflow "on pull request merge, delete the branch" {
 action "branch cleanup" {
   uses = "jessfraz/branch-cleanup-action@master"
   secrets = ["GITHUB_TOKEN"]
-}
-
-workflow "Simple SH things" {
-  on = "push"
-  resolves = ["Try EntrypointDOTsh"]
-}
-
-action "Try EntrypointDOTsh" {
-  uses = "actions/bin/sh@master"
-  secrets = ["SOME_SECRET"]
-  args = "./entrypoint.sh"
 }
