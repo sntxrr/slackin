@@ -14,6 +14,7 @@ action "filter-to-pr-open-synced" {
 action "sntxrr/create-terraformrc/@master" {
   uses = "sntxrr/create-terraformrc@master"
   needs = "filter-to-pr-open-synced"
+  secrets = ["TF_ENV_TOKEN"]
   env = {
     TF_ACTION_WORKING_DIR = "./terraform"
   }
