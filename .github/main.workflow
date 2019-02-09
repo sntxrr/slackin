@@ -10,7 +10,7 @@ action "create terraformrc" {
 
 action "filter-to-pr-open-synced" {
   uses = "actions/bin/filter@master"
-  needs ="create terraformrc"
+  needs = "create terraformrc"
   args = "action 'opened|synchronize'"
 }
 
@@ -44,7 +44,7 @@ action "terraform-validate" {
 action "terraform-plan" {
   uses = "hashicorp/terraform-github-actions/plan@v0.1.1"
   needs = "terraform-validate"
-  secrets = ["GITHUB_TOKEN", "TF_VAR_TOKEN"]
+  secrets = ["GITHUB_TOKEN"]
   env = {
     TF_ACTION_WORKING_DIR = "./terraform"
     # If you're using Terraform workspaces, set this to the workspace name.
