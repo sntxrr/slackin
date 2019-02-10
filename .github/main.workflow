@@ -30,12 +30,15 @@ action "terraform-fmt" {
 }
 
 action "terraform-init" {
-  uses = "hashicorp/terraform-github-actions/init@v0.1.1"
+  uses = "sntxrr/terraform-github-actions/init@master"
   needs = [
     "terraform-fmt",
     "sntxrr/create-terraformrc@master",
   ]
-  secrets = ["GITHUB_TOKEN"]
+  secrets = [
+    "GITHUB_TOKEN",
+    "TF_ENV_TOKEN",
+  ]
   env = {
     TF_ACTION_WORKING_DIR = "./terraform"
   }
@@ -78,7 +81,4 @@ action "sntxrr/create-terraformrc@master" {
     "GITHUB_TOKEN",
     "TF_ENV_TOKEN",
   ]
-  env = {
-    TF_ACTION_WORKING_DIR = "./terraform"
-  }
 }
