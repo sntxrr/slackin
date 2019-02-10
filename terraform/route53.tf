@@ -3,7 +3,7 @@ resource "aws_route53_zone" "slackin" {
   name = "sntxrr.com"
 }
 
-# what else might I be missing? who knows 
+# what else might I be missing? who knows  
 resource "aws_route53_record" "alias_route53_record" {
   zone_id = "${aws_route53_zone.slackin.zone_id}"
   name    = "invite.sntxrr.com"
