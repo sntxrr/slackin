@@ -1,37 +1,15 @@
-terraform {
-  backend "remote" {
-    organization = "rrxtns"
-
-    workspaces {
-      name = "slackin-dev"
-    }
-  }
-}
-
-variable "AWS_REGION" {
-  type    = "string"
+variable "aws_region" {
   default = "us-west-2"
 }
 
-variable "TAG_ENV" {
-  default = "dev"
+variable "az_count" {
+  description = "Number of availability zones to cover in a given AWS region"
+  default     = "2"
 }
 
-variable "ENV" {
-  default = "PROD"
-}
-
-variable "CIDR_PRIVATE" {
-  default = "10.0.1.0/24,10.0.2.0/24"
-}
-
-variable "CIDR_PUBLIC" {
-  default = "10.0.101.0/24,10.0.102.0/24"
-}
-
-variable "image" {
-  description = "Docker image to run in the ECS cluster"
-  default     = "sntxrr/slackin"
+variable "count" {
+  description = "Number of docker containers to run"
+  default     = "2"
 }
 
 variable "cpu" {
@@ -39,7 +17,22 @@ variable "cpu" {
   default     = "256"
 }
 
+variable "image" {
+  description = "Docker image to run in the ECS cluster"
+  default     = "sntxrr/slackin"
+}
+
+variable "invite_domain" {
+  description = "Domain in which you'd like to add slackin inviter to"
+  default     = "sntxrr.com"
+}
+
 variable "memory" {
   description = "Fargate instance memory to provision (in MiB)"
   default     = "512"
+}
+
+variable "port" {
+  description = "Port exposed by the docker image to redirect traffic to"
+  default     = "3000"
 }
