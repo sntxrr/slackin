@@ -8,12 +8,7 @@ locals {
     "entryPoint": ["/secrets-entrypoint.sh"],
     "environment" : [
       { "name" : "AWS_REGION", "value" : "${var.aws_region}" },
-      { "name" : "SLACK_COC", "valuefrom" : "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/SLACK_COC" },
-      { "name" : "SLACK_CHANNELS", "valuefrom" : "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/SLACK_CHANNELS" },
-      { "name" : "SLACK_SUBDOMAIN", "valuefrom" : "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/SLACK_SUBDOMAIN" },
-      { "name" : "SLACK_API_TOKEN", "valuefrom" : "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/SLACK_API_TOKEN" },
-      { "name" : "GOOGLE_CAPTCHA_SECRET", "valuefrom" : "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/GOOGLE_CAPTCHA_SECRET" },
-      { "name" : "GOOGLE_CAPTCHA_SITEKEY", "valuefrom" : "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/GOOGLE_CAPTCHA_SITEKEY" }
+      { "name" : "BLOCKDOMAINS_SLACK_LIST", "value" : "file://blockdomains.txt" }
     ],
     "execution_role_arn": "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/app-ecs-task-execution-role",
     "image": "${var.image}",
@@ -36,27 +31,27 @@ locals {
     ],
     "secrets": [
       {
-        "name": "SECRET_SLACK_COC",
+        "name": "SLACK_COC",
         "valueFrom": "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/SLACK_COC"
       },
       {
-        "name": "SECRET_SLACK_CHANNELS",
+        "name": "SLACK_CHANNELS",
         "valueFrom": "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/SLACK_CHANNELS"
       },
       {
-        "name": "SECRET_SLACK_SUBDOMAIN",
+        "name": "SLACK_SUBDOMAIN",
         "valueFrom": "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/SLACK_SUBDOMAIN"
       },
       {
-        "name": "SECRET_SLACK_API_TOKEN",
+        "name": "SLACK_API_TOKEN",
         "valueFrom": "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/SLACK_API_TOKEN"
       },
       {
-        "name": "SECRET_GOOGLE_CAPTCHA_SECRET",
+        "name": "GOOGLE_CAPTCHA_SECRET",
         "valueFrom": "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/GOOGLE_CAPTCHA_SECRET"
       },
       {
-        "name": "SECRET_GOOGLE_CAPTCHA_SITEKEY",
+        "name": "GOOGLE_CAPTCHA_SITEKEY",
         "valueFrom": "arn:aws:ssm:${var.aws_region}:${data.aws_caller_identity.current.account_id}:parameter/GOOGLE_CAPTCHA_SITEKEY"
       }
     ]
