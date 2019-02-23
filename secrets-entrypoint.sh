@@ -17,6 +17,3 @@ echo "Slack subdomain env var is: " $SLACK_SUBDOMAIN
 echo "Slack API token env var is: " $SLACK_API_TOKEN
 echo "Google captcha Secret env var is: " $GOOGLE_CAPTCHA_SECRET
 echo "Google captcha sitekey env var is: " $GOOGLE_CAPTCHA_SITEKEY
-
-# Call the entry-point script reentrantly
-/secrets-entrypoint.sh "$@"
