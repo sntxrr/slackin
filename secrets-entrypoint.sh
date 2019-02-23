@@ -17,3 +17,5 @@ echo "Slack subdomain env var is: " $SLACK_SUBDOMAIN
 echo "Slack API token env var is: " $SLACK_API_TOKEN
 echo "Google captcha Secret env var is: " $GOOGLE_CAPTCHA_SECRET
 echo "Google captcha sitekey env var is: " $GOOGLE_CAPTCHA_SITEKEY
+
+./bin/slackin --coc "$SLACK_COC" --channels "$SLACK_CHANNELS" --port $PORT $SLACK_SUBDOMAIN $SLACK_API_TOKEN $GOOGLE_CAPTCHA_SECRET $GOOGLE_CAPTCHA_SITEKEY

@@ -24,7 +24,7 @@ variable "image" {
 
 variable "invite_domain" {
   description = "Domain in which you'd like to add slackin inviter to"
-  default     = "sntxrr.com"
+  default     = "hangops.com"
 }
 
 variable "memory" {
