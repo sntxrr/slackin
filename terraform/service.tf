@@ -11,6 +11,7 @@ locals {
       { "name" : "BLOCKDOMAINS_SLACK_LIST", "value" : "${var.block_list}" },
       { "name" : "CUSTOM_CSS", "value" : "${var.custom_css}" },
       { "name" : "INTERVAL", "value" : "${var.interval}" }
+      { "name" : "PORT", "value" : "${var.port}" }
     ],
     "execution_role_arn": "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/app-ecs-task-execution-role",
     "image": "${var.image}",
