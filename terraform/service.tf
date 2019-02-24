@@ -8,7 +8,7 @@ locals {
     "entryPoint": ["/secrets-entrypoint.sh"],
     "environment" : [
       { "name" : "AWS_REGION", "value" : "${var.aws_region}" },
-      { "name" : "BLOCKDOMAINS_SLACK_LIST", "value" : "${var.block_list}" },
+      { "name" : "BLOCKDOMAINS_SLACK_LIST", "value" : "${var.blocklist_file}" },
       { "name" : "CUSTOM_CSS", "value" : "${var.custom_css}" },
       { "name" : "INTERVAL", "value" : "${var.interval}" }
       { "name" : "PORT", "value" : "${var.port}" }
