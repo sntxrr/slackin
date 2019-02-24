@@ -10,7 +10,7 @@ locals {
       { "name" : "AWS_REGION", "value" : "${var.aws_region}" },
       { "name" : "BLOCKDOMAINS_SLACK_LIST", "value" : "${var.blocklist_file}" },
       { "name" : "CUSTOM_CSS", "value" : "${var.custom_css}" },
-      { "name" : "INTERVAL", "value" : "${var.interval}" }
+      { "name" : "INTERVAL", "value" : "${var.interval}" },
       { "name" : "PORT", "value" : "${var.port}" }
     ],
     "execution_role_arn": "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/app-ecs-task-execution-role",
