@@ -123,5 +123,5 @@ resource "aws_iam_role_policy_attachment" "ecs_tasks_execution_role_ssm" {
 
 resource "aws_cloudwatch_log_group" "logs" {
   name              = "/fargate/service/slackin"
-  retention_in_days = "14"
+  retention_in_days = "21"
 }
