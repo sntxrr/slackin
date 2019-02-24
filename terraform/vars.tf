@@ -7,6 +7,11 @@ variable "az_count" {
   default     = "2"
 }
 
+variable "blocklist_file" {
+  description = "Name of file to use as block list"
+  default     = "file://blockdomains.txt"
+}
+
 variable "count" {
   description = "Number of docker containers to run"
   default     = "2"
@@ -17,9 +22,19 @@ variable "cpu" {
   default     = "256"
 }
 
+variable "custom_css" {
+  description = "Custom CSS URL to use"
+  default     = "https://signup.hangops.com/css/style.css"
+}
+
 variable "image" {
   description = "Docker image to run in the ECS cluster"
   default     = "sntxrr/slackin"
+}
+
+variable "interval" {
+  description = "Interval to check for current online users in your slack"
+  default     = "300000"
 }
 
 variable "invite_domain" {
