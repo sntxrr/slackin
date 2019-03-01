@@ -26,6 +26,11 @@ locals {
     "memory": ${var.memory},
     "name": "app",
     "networkMode": "awsvpc",
+    "networkConfiguration": {
+      "awsvpcConfiguration": {
+        "assignPublicIp": "ENABLED"
+      }
+    },
     "portMappings": [
       {
         "containerPort": ${var.port},

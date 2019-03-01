@@ -61,4 +61,7 @@ if [ -z "$SLACK_SUBDOMAIN" ]; then
   exit 1
 fi
 
+echo "All env vars were set correctly"
+printenv
+
 ./bin/slackin --coc "$SLACK_COC" --channels "$SLACK_CHANNELS" --port $PORT --interval $INTERVAL --css $CUSTOM_CSS $SLACK_SUBDOMAIN $SLACK_API_TOKEN $GOOGLE_CAPTCHA_SECRET $GOOGLE_CAPTCHA_SITEKEY 2>&1
